@@ -9,6 +9,9 @@ export default function Hero({
   mainContainerRef,
   gradientBgRef,
   imageDivRef,
+  otherJustRef,
+  justRef,
+  lensCoverRef,
 }: HeroProps) {
   useGSAP(
     () => {
@@ -55,10 +58,14 @@ export default function Hero({
         }}
         ref={gradientBgRef}
       >
-        <span className="absolute top-[40%] flex text-white text-lg font-bold">
-          <p className="text-lg text-bold">Just</p>
-          <p> Point and Shoot</p>
+        <span className="absolute z-2 top-[37%] flex text-white text-2xl font-bold">
+          <p ref={justRef}>Just</p>
+          <p ref={otherJustRef}> Point and Shoot</p>
         </span>
+        <span className="absolute z-3 top-[37%] text-white">
+          <p className="text-[17px] font-garamond">Available Winter 2025</p>
+        </span>
+
         {/* items div */}
         <div
           className="w-[75%] flex flex-col items-center pt-8 h-[100%] relative overflow-y-hidden"
@@ -95,7 +102,7 @@ export default function Hero({
           </div>
           {/* image div */}
           <div
-            className="flex-1 w-[78%] mt-2 flex justify-center relative"
+            className="flex-1 w-[78%] -mb-[5rem] md:-mb-[3rem] mt-2 md:mt-2 flex justify-center relative"
             ref={imageDivRef}
           >
             <img
@@ -104,15 +111,17 @@ export default function Hero({
               className="h-[95%] w-[92%]"
             />
             <img
+              ref={lensCoverRef}
               style={{
                 aspectRatio: "3 / 4",
-                height: "calc(100% - 10%)",
+                height: "calc(100% - 14%)",
                 width: "clamp(5rem, 19vw, 16rem)",
               }}
               id="lensCover"
               src="/images/lensCov.avif"
               alt="af1"
-              className="absolute left-[8%] bottom-[6%]  md:bottom-[8%] lg:bottom-[4.1%]"
+              className="absolute left-[8%] bottom-[6%]  md:bottom-[8%] lg:bottom-[9.1%]"
+              // className="absolute left-[38%] bottom-[6%]  md:bottom-[8%] lg:bottom-[9.1%]"
             />
             {/* <img
               id="lensCover"
