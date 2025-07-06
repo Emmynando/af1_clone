@@ -44,7 +44,7 @@ body {
 }
 
 input,
-button,
+/* button, */
 textarea,
 select {
   font: inherit;

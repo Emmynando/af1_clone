@@ -6,19 +6,21 @@ export default function Navbar({
 }) {
   return (
     <main className="flex items-center pl-2 pr-4" ref={navContainerRef}>
-      <div className="relative h-[4rem] flex justify-end items-center w-[62.5%] ">
+      {/* <div className="relative h-[4rem] flex justify-end items-center w-[60%] ml-auto bg-red-900"> */}
+      <div className="flex items-center justify-end w-[65%] h-[4rem]">
         <img
           src="/images/analog.png"
           alt="Logo"
-          style={{ width: "20%", height: "100%" }}
+          style={{ width: "40%", height: "100%" }}
         />
       </div>
-      <div className="w-[37.5%] flex items-center justify-end px-2">
-        <TbWorld />
+      {/* <div className=" flex items-center justify-end px-2"> */}
+      <div className="flex items-center justify-end w-[35%]  px-2 ">
+        <TbWorld className="ml-[2.5rem] md:ml-0" />
         <select
           name="language"
           id="language"
-          className="text-xs w-[6rem] outline-none"
+          className=" md:max-w-[40%] text-xs w-[100%] md:w-[25%] outline-none "
         >
           <option value="English" className="text-xs">
             English
