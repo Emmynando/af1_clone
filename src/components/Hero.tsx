@@ -29,6 +29,18 @@ export default function Hero({
         // duration: 3,
         left: "28%",
       });
+      gsap.to("#gradientBg", {
+        scrollTrigger: {
+          trigger: "#itemsDiv",
+          start: "10% top",
+          end: "bottom 10%",
+          // markers: true,
+          toggleActions: "play play reverse reverse",
+          scrub: 1,
+        },
+        // duration: 3,
+        scaleX: 0.7,
+      });
     },
     { dependencies: ["#itemsDiv"], revertOnUpdate: true }
   );
@@ -61,6 +73,7 @@ export default function Hero({
               : "radial-gradient(50% 75% at 50% 50%, rgb(0, 54, 140) 0%, rgb(0, 79, 206) 10.6771%, rgb(237, 237, 237) 100%)",
         }}
         ref={gradientBgRef}
+        id="gradientBg"
       >
         <span className="absolute z-2 top-[55%] md:top-[37%] flex text-white text-2xl font-bold">
           <p ref={justRef}>Just</p>
