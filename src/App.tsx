@@ -3,6 +3,8 @@ import gsap from "gsap";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import RefenceImage from "./components/RefImage";
+import Highlights from "./components/Highlights";
+import SecondRefenceImage from "./components/SecondRefImage";
 
 // gsap.registerPlugin();
 function App() {
@@ -190,8 +192,8 @@ function App() {
 
   return (
     <>
-      <Navbar navContainerRef={navContainerRef} />
-      <Hero
+      {/* <Navbar navContainerRef={navContainerRef} /> */}
+      {/* <Hero
         mainContainerRef={mainContainerRef}
         gradientBgRef={gradientBgRef}
         imageDivRef={imageDivRef}
@@ -200,8 +202,10 @@ function App() {
         lensCoverRef={lensCoverRef}
         headerRef={headerRef}
         inputRef={inputRef}
-      />
+      /> */}
       <RefenceImage />
+      <SecondRefenceImage />
+      <Highlights />
     </>
   );
 }

@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -22,7 +21,7 @@ export default function Hero({
           trigger: "#itemsDiv",
           start: "10% top",
           end: "bottom top",
-          // markers: true,
+
           toggleActions: "play play reverse reverse",
           scrub: 1,
         },
@@ -34,7 +33,7 @@ export default function Hero({
           trigger: "#itemsDiv",
           start: "10% top",
           end: "bottom 10%",
-          // markers: true,
+
           toggleActions: "play play reverse reverse",
           scrub: 1,
         },
@@ -44,23 +43,6 @@ export default function Hero({
     },
     { dependencies: ["#itemsDiv"], revertOnUpdate: true }
   );
-
-  // useGSAP(
-  //   () => {
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: "#itemsDiv",
-  //         start: "top bottom",
-  //         end: "bottom top",
-  //         scrub: 0.5,
-  //         markers: true,
-  //       },
-  //     });
-
-  //     tl.to("#lensCover", { left: "24%" });
-  //   },
-  //   { dependencies: ["#itemsDiv"], revertOnUpdate: true }
-  // );
 
   return (
     <main className="py-2 px-2 md:px-4" ref={mainContainerRef}>

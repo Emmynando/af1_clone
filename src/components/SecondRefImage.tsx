@@ -2,14 +2,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 const CAMERAROLL = [
-  { id: "c1", image: "/images/cam-roll1.avif", imageHeight: "60%" },
+  //   { id: "c1", image: "/images/cam-roll1.avif", imageHeight: "60%" },
   { id: "c2", image: "/images/can-roll2.avif", imageHeight: "30%" },
-  // { id: "c3", image: "/images/cam-roll3.jpg", imageHeight: "80%" },
-  // { id: "c4", image: "/images/cam-roll4.avif", imageHeight: "80%" },
-  // { id: "c5", image: "/images/cma-roll5.avif", imageHeight: "80%" },
+  { id: "c3", image: "/images/cam-roll3.jpg", imageHeight: "80%" },
+  { id: "c4", image: "/images/cam-roll4.avif", imageHeight: "80%" },
+  { id: "c5", image: "/images/cma-roll5.avif", imageHeight: "80%" },
 ];
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -17,22 +17,18 @@ type RefsType = {
   [key: string]: HTMLDivElement | null;
 };
 
-export default function RefenceImage() {
+export default function SecondRefenceImage() {
   const rollDivRef = useRef<HTMLDivElement | null>(null);
   const refs = useRef<RefsType>({});
-  const firstImgRef = useRef<number>(0);
-
-  const triggerRef = useRef(null);
 
   useGSAP(
     () => {
       // Single ScrollTrigger that handles everything
       // const mainTl = gsap.timeline();
-      const imgRollDiv = document.getElementById("imgRollDiv");
 
       // const computedStyle = getComputedStyle(imgRollDiv);
       gsap.set("#imgRollDiv", {
-        width: "50%",
+        width: "30%",
         y: 100,
       });
       const mainTl = gsap.timeline({
@@ -47,7 +43,7 @@ export default function RefenceImage() {
       if (!rollDivRef.current) return;
       // gsap.set("#imgRollDiv",);
       mainTl.to("#imgRollDiv", {
-        width: "30%",
+        width: "20%",
         y: 0,
         duration: 1,
         ease: "power2.out",
@@ -64,18 +60,6 @@ export default function RefenceImage() {
       className="h-dvh w-dvw bg-white overflow-x-hidden relative"
       id="mainContainer"
     >
-      <div
-        className="w-[170%] md:w-full h-full bg-[url('/images/cma-roll5.avif')] bg-cover bg-no-repeat bg-[length:180%] md:bg-[length:133%] bg-[position:-10rem_1rem] md:bg-[position:center_-24em] object-fill h-[dvh]"
-        id="firstImage"
-      >
-        <h2
-          className="text-white text-center font-garamond font-normal w-[15ch] md:w-[19ch] leading-[1] -tracking-[1.5px] text-[28px] md:text-[64px] absolute top-[45%] md:top-[35%] left-[5%] md:left-[25%] z-4"
-          id="firstImageText"
-        >
-          Remember when every shot was a moment to cherish
-        </h2>
-      </div>
-
       {/* <span id="secondText" className="absolute bottom-[10%] right-[5%] z-10">
         <h3 className=" w-[10ch] md:w-[19ch] text-white leading-[1] text-base md:text-[28px] -tracking-[1.5px] font-bold">
           Discover the joy of capturing life, one frame at a time
@@ -91,17 +75,10 @@ export default function RefenceImage() {
         id="rollDiv"
       > */}
       <div
-        className="flex justify-center items-center w-full bg-[#080808] no-scrollbar overflow-y-hidden h-dvh"
+        className="flex justify-center items-center w-full bg-[#080808] no-scrollbar overflow-y-hidden h-dvh pt-8"
         id="rollDiv"
         ref={rollDivRef}
       >
-        <h2
-          className="text-white text-center font-garamond font-normal w-[90%] md:w-[90%] leading-[1] -tracking-[1.5px] text-[28px] md:text-[64px] absolute top-[45%] md:top-[130%] left-[5%] md:left-[5%] z-10"
-          id="firstText"
-        >
-          The aF-1 helps you to slow down, observe your surroundings and focus
-          on the beauty of the present
-        </h2>
         <div
           className={`relative flex flex-col items-center justify-center`}
           id="imgRollDiv"
@@ -124,6 +101,28 @@ export default function RefenceImage() {
         </div>
       </div>
       {/* next div */}
+      {/* <div
+        className="flex justify-center items-center w-full bg-[#080808] no-scrollbar overflow-y-hidden h-dvh"
+        // ref={rollDivRef}
+      >
+        <div className={`relative flex flex-col items-center justify-center`}>
+          {CAMERAROLL.map((item) => (
+            <div
+              key={item.id}
+              className="relative w-full"
+              id={item.id}
+              // ref={(el) => {
+              //   (refs.current[item.id] as HTMLDivElement | null) = el;
+              // }}
+            >
+              <img
+                src={item.image}
+                className={`h-${item.imageHeight} w-full`}
+              />
+            </div>
+          ))}
+        </div>
+      </div> */}
     </main>
   );
 }
