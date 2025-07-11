@@ -192,8 +192,8 @@ function App() {
 
   return (
     <>
-      {/* <Navbar navContainerRef={navContainerRef} /> */}
-      {/* <Hero
+      <Navbar navContainerRef={navContainerRef} />
+      <Hero
         mainContainerRef={mainContainerRef}
         gradientBgRef={gradientBgRef}
         imageDivRef={imageDivRef}
@@ -202,7 +202,7 @@ function App() {
         lensCoverRef={lensCoverRef}
         headerRef={headerRef}
         inputRef={inputRef}
-      /> */}
+      />
       <RefenceImage />
       <SecondRefenceImage />
       <Highlights />

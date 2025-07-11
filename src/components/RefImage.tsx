@@ -66,7 +66,7 @@ export default function RefenceImage() {
 
   return (
     <main
-      className="h-dvh w-dvw bg-white overflow-x-hidden relative"
+      className="h-dvh w-dvw bg-white overflow-x-hidden relative no-scrollbar"
       id="mainContainer"
     >
       <div
@@ -87,7 +87,7 @@ export default function RefenceImage() {
         ref={rollDivRef}
       >
         <h2
-          className="text-white text-center font-garamond font-normal w-[90%] md:w-[90%] leading-[1] -tracking-[1.5px] text-[28px] md:text-[64px] absolute top-[45%] md:top-[150%] left-[5%] md:left-[5%] z-10"
+          className="text-white text-center font-garamond font-normal w-[90%] md:w-[90%] leading-[1] -tracking-[1.5px] text-[28px] md:text-[64px] absolute top-[45%] md:top-[160%] left-[5%] md:left-[5%] z-10"
           id="firstText"
         >
           The aF-1 helps you to slow down, observe your surroundings and focus

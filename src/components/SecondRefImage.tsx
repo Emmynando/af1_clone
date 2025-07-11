@@ -23,10 +23,6 @@ export default function SecondRefenceImage() {
 
   useGSAP(
     () => {
-      // Single ScrollTrigger that handles everything
-      // const mainTl = gsap.timeline();
-
-      // const computedStyle = getComputedStyle(imgRollDiv);
       gsap.set("#imgRollDiv", {
         width: "30%",
         y: 100,
@@ -35,7 +31,7 @@ export default function SecondRefenceImage() {
         scrollTrigger: {
           trigger: rollDivRef.current,
           start: "top 90%",
-          end: "top 30%",
+          end: `+=${window.innerHeight * 2}`,
           scrub: 1,
           markers: true,
         },
@@ -46,6 +42,18 @@ export default function SecondRefenceImage() {
         width: "20%",
         y: 0,
         duration: 1,
+        ease: "power2.out",
+      });
+      mainTl.to("#secondText", {
+        duration: 1,
+        bottom: "50%",
+        opacity: 0,
+        ease: "power2.out",
+      });
+      mainTl.to("#thirdText", {
+        duration: 1,
+        bottom: "50%",
+        opacity: 0,
         ease: "power2.out",
       });
     },
@@ -60,7 +68,7 @@ export default function SecondRefenceImage() {
       className="h-dvh w-dvw bg-white overflow-x-hidden relative"
       id="mainContainer"
     >
-      {/* <span id="secondText" className="absolute bottom-[10%] right-[5%] z-10">
+      <span id="secondText" className="absolute bottom-[10%] right-[5%] z-10">
         <h3 className=" w-[10ch] md:w-[19ch] text-white leading-[1] text-base md:text-[28px] -tracking-[1.5px] font-bold">
           Discover the joy of capturing life, one frame at a time
         </h3>
@@ -70,10 +78,7 @@ export default function SecondRefenceImage() {
           Greatness, takes time
         </h3>
       </span>
-      {/* <div
-        className="flex justify-center items-center w-full bg-[#080808] overflow-y-scroll no-scrollbar"
-        id="rollDiv"
-      > */}
+
       <div
         className="flex justify-center items-center w-full bg-[#080808] no-scrollbar overflow-y-hidden h-dvh pt-8"
         id="rollDiv"
@@ -100,29 +105,6 @@ export default function SecondRefenceImage() {
           ))}
         </div>
       </div>
-      {/* next div */}
-      {/* <div
-        className="flex justify-center items-center w-full bg-[#080808] no-scrollbar overflow-y-hidden h-dvh"
-        // ref={rollDivRef}
-      >
-        <div className={`relative flex flex-col items-center justify-center`}>
-          {CAMERAROLL.map((item) => (
-            <div
-              key={item.id}
-              className="relative w-full"
-              id={item.id}
-              // ref={(el) => {
-              //   (refs.current[item.id] as HTMLDivElement | null) = el;
-              // }}
-            >
-              <img
-                src={item.image}
-                className={`h-${item.imageHeight} w-full`}
-              />
-            </div>
-          ))}
-        </div>
-      </div> */}
     </main>
   );
 }
