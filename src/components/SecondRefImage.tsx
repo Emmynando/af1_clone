@@ -33,7 +33,7 @@ export default function SecondRefenceImage() {
           start: "top 90%",
           end: `+=${window.innerHeight * 2}`,
           scrub: 1,
-          markers: true,
+          // markers: true,
         },
       });
       if (!rollDivRef.current) return;

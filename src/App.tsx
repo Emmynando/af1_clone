@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import RefenceImage from "./components/RefImage";
 import Highlights from "./components/Highlights";
 import SecondRefenceImage from "./components/SecondRefImage";
+import DragToRotate from "./DragToRotate";
 
 // gsap.registerPlugin();
 function App() {
@@ -205,7 +206,8 @@ function App() {
       />
       <RefenceImage />
       <SecondRefenceImage />
-      <Highlights />
+      <DragToRotate />
+      {/* <Highlights /> */}
     </>
   );
 }

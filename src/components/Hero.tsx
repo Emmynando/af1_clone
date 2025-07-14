@@ -21,7 +21,6 @@ export default function Hero({
           trigger: "#itemsDiv",
           start: "10% top",
           end: "bottom top",
-
           toggleActions: "play play reverse reverse",
           scrub: 1,
         },
@@ -33,7 +32,6 @@ export default function Hero({
           trigger: "#itemsDiv",
           start: "10% top",
           end: "bottom 10%",
-
           toggleActions: "play play reverse reverse",
           scrub: 1,
         },
